@@ -12,3 +12,14 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const imageCallback = ({ url, alt }) => {
+  return `<li class="gallery-item">
+    <img class="gallery-image" src="${url}" alt="${alt}" />
+  </li>`;
+};
+
+const galleryElement = document.querySelector('ul.gallery');
+const galleryHtml = images.map(imageCallback).join('');
+
+galleryElement.insertAdjacentHTML('beforeend', galleryHtml);
