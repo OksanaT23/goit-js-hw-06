@@ -4,7 +4,7 @@ const output = document.getElementById('name-output');
 input.addEventListener('input', contentSpan);
 
 function contentSpan(event) {
-    const newValue = event.target.value;
+    const newValue = event.target.value.trim();
     const outputValue = newValue ? newValue : 'Anonymous';
 
     output.textContent = outputValue;
